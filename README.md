@@ -1,2 +1,2 @@
-# BarnesHut
+# Barnes-Hut Algorithm
 Implementation of the Barnes Hut algorithm with simulation of collision of two point clouds
