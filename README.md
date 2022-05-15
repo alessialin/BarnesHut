@@ -7,7 +7,7 @@ Implementation of the Barnes Hut algorithm with simulation of collision of two p
 │   └── simulation.py
 ├── src
 │   └── quadtree.py
-|   └── force.py
+|   └── bruteforce.py
 |   └── BarnesHut.py
 ├── .gitignore
 ├── LICENSE
