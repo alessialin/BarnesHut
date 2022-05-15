@@ -4,11 +4,12 @@ Implementation of the Barnes Hut algorithm with simulation of collision of two p
 ## Files Structure
 ```
 ├── simulations
-│   └── simulation.py
+│   └── 
 ├── src
 │   └── quadtree.py
 |   └── bruteforce.py
 |   └── BarnesHut.py
+|   └── simulation.py
 ├── .gitignore
 ├── LICENSE
 ├── README.md
