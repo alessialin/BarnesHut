@@ -14,6 +14,7 @@ if __name__ == '__main__':
     #simulation space
     n = 1000 #number of particles
     s = 15.0 #half length of box, kpc
+
     #Barnes-Hut simulation resolution
     theta = 1.0
     epsilon = theta*s/np.sqrt(n)
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     #generate Barnes-Hut tree on original grid
     tree = Node(QuadTree(-s,-s,2*s))
     #populate tree with bodies from list
-    for body in bodies[:5]: #only first 5 
+    for body in bodies: 
         tree.insert_body(body)
     #calculate force on every body from tree and evolve leapfrog step
     #for body in bodies:
@@ -61,5 +62,5 @@ if __name__ == '__main__':
         images.append((scatter,))
          
     anim = animation.ArtistAnimation(fig, images, interval=100, blit=True)
-    anim.save('BH_'+str(n)+'.gif', fps=10)
+    anim.save('BH_'+str(n)+'.gif', fps=2)
     plt.show()

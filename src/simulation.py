@@ -5,7 +5,7 @@ import numpy as np
 from body import *
 
 def gravitational_constant():
-    return 4.302e-3  # pc(M_solar)^-1 (km/s)^2
+    return 4.302e-3  # pc(M_solar)^-1 (km/s)^2 outside of the solar galaxy
 
 def generateGalaxy(r0, mass, n, s):
     """n = number of celestial bodies in the galaxy"""
