@@ -3,7 +3,7 @@ from quadtree import *
 
 class Node: #BHTree or QuadTree
     """Definition of Node based on Barnes Hut"""
-    def __init__(self, quadrant=QuadTree):
+    def __init__(self, quadrant=Quad):
         self.quadrant = quadrant
     
     def insert_body(self, body=Body):

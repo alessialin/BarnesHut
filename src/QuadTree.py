@@ -1,8 +1,8 @@
-# QuadTree structure + massive body
+# Quad structure + massive body
 import matplotlib.pyplot as plt
 import numpy as np
 
-class QuadTree:
+class Quad:
     """
     Defining a 2D quadrant for Barnes Hut.
     
@@ -17,20 +17,20 @@ class QuadTree:
     """
     def __init__(self, rx, ry, s:float):
         self.r = np.array([rx, ry])
-        self.s = float(s)
+        self.s = s
     
     # subquadrants (SW = southwest, NW = northwest, NE = northeast, SE = southeast)
     def SW(self):
-        return QuadTree(self.r[0], self.r[1], self.s/2.0)
+        return Quad(self.r[0], self.r[1], self.s/2.0)
     
     def NW(self):
-        return QuadTree(self.r[0], self.r[1]+self.s/2.0, self.s/2.0)
+        return Quad(self.r[0], self.r[1]+self.s/2.0, self.s/2.0)
 
     def NE(self):
-        return QuadTree(self.r[0]+self.s/2.0, self.r[1]+self.s/2.0, self.s/2.0)
+        return Quad(self.r[0]+self.s/2.0, self.r[1]+self.s/2.0, self.s/2.0)
 
     def SE(self):
-        return QuadTree(self.r[0]+self.s/2.0, self.r[1], self.s/2.0)
+        return Quad(self.r[0]+self.s/2.0, self.r[1], self.s/2.0)
 
     def plot_Quad(self):
         rx, ry, s = self.r[0], self.r[1], self.s
