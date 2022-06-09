@@ -1,41 +1,34 @@
-# Quad structure + massive body
-import matplotlib.pyplot as plt
+#essential modules
 import numpy as np
+import matplotlib.pyplot as plt
 
+#class: a quadrant in space
 class Quad:
-    """
-    Defining a 2D quadrant for Barnes Hut.
-    
-    Parameters: 
-    -----------
-        rx : int
-            x-axis of left corner of quadrant
-        ry : int
-            y-axis of left corner of quadrant
-        s : float
-            quadrant side length
-    """
-    def __init__(self, rx, ry, s:float):
-        self.r = np.array([rx, ry])
-        self.s = s
-    
-    # subquadrants (SW = southwest, NW = northwest, NE = northeast, SE = southeast)
+    """definition of a quadrant in 2D space"""
+    def __init__(self, rx, ry, L):
+        #anchor lower left corner
+        self.r = np.array([rx,ry])
+        #side length
+        self.L = L
+
+    #return subquadrants
     def SW(self):
-        return Quad(self.r[0], self.r[1], self.s/2.0)
-    
-    def NW(self):
-        return Quad(self.r[0], self.r[1]+self.s/2.0, self.s/2.0)
-
-    def NE(self):
-        return Quad(self.r[0]+self.s/2.0, self.r[1]+self.s/2.0, self.s/2.0)
-
+        #return northwest quadrant
+        return Quad(self.r[0], self.r[1], self.L/2.0)
     def SE(self):
-        return Quad(self.r[0]+self.s/2.0, self.r[1], self.s/2.0)
+        #return northwest quadrant
+        return Quad(self.r[0]+self.L/2.0, self.r[1], self.L/2.0)
+    def NW(self):
+        #return northwest quadrant
+        return Quad(self.r[0], self.r[1]+self.L/2.0, self.L/2.0)
+    def NE(self):
+        #return northwest quadrant
+        return Quad(self.r[0]+self.L/2.0, self.r[1]+self.L/2.0, self.L/2.0)
 
-    def plot_Quad(self):
-        rx, ry, s = self.r[0], self.r[1], self.s
-        plt.plot([rx, rx+s], [ry+ry], c='k')
-        plt.plot([rx,rx], [ry,ry+s], c='k')
-        plt.plot([rx+s,rx+s], [ry,ry+s], c='k')
-        plt.plot([rx,rx+s], [ry+s,ry+s], c='k')
-
+    def plot(self):
+        #plot quadrant
+        rx, ry, L = self.r[0], self.r[1], self.L
+        plt.plot([rx, rx+L], [ry, ry], c='b')
+        plt.plot([rx, rx], [ry, ry+L], c='b')
+        plt.plot([rx+L, rx+L], [ry, ry+L], c='b')
+        plt.plot([rx, rx+L], [ry+L, ry+L], c='b')
