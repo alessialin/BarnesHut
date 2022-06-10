@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from body import Body
 
 #function: initialize array of bodies in a galaxy
-def generateGalaxy(r0, m0, N, L, c_vel=[0.,0.], center=[0.,0.], color='k'):
+def generateGalaxy(r0, m0, N, L, c_vel=[0.,0.], center=[0.,0.]):
     #divide mass of galaxy among N masses
     m = m0/N
     #generate N bodies
@@ -22,7 +22,7 @@ def generateGalaxy(r0, m0, N, L, c_vel=[0.,0.], center=[0.,0.], color='k'):
             vx = -v*np.sin(theta) + c_vel[0]
             vy = v*np.cos(theta)+ c_vel[1]
             #generate body
-            bodies.append(Body(m, rx, ry, vx=vx, vy=vy, L=L+center[0], color=color))
+            bodies.append(Body(m, rx, ry, vx=vx, vy=vy, L=L+center[0]))
     return bodies
 
 # #function: initialize array of bodies in uniform box

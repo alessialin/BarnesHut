@@ -7,6 +7,9 @@
 *.mp4
 *.gif
 
+#virtualenv
+venv/
+
 # test directories
 test/
 
@@ -16,4 +19,4 @@ __pycache__/
 
 # miscellaneous
 .DS_Store
-venv/
+nohup.out
