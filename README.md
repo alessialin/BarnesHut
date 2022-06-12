@@ -4,10 +4,13 @@ Implementation of the Barnes Hut algorithm with simulation of collision of two p
 ## Files Structure
 ```
 ├── output
-│   └── BH_GalaxyCollision_800_v0.mp4
+│   └── BH_GalaxyCollision_800_v[x].mp4
+│   └── BH_GalaxySimulation_800_v[x].mp4
 │   └── BarnesHut_time.png
 │   └── BruteForce_time.png
 │   └── Comparison_time.png
+│   └── BH_Quad_vel.png
+│   └── BH_Quad.png
 ├── src
 │   └── quadtree.py
 |   └── BruteForce.py
@@ -16,6 +19,7 @@ Implementation of the Barnes Hut algorithm with simulation of collision of two p
 │   └── node.py
 │   └── BH_evaluation.py
 │   └── comparison.py
+│   └── quadtree_example.py
 │   └── utils.py
 ├── .gitignore
 ├── LICENSE
