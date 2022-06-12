@@ -13,7 +13,7 @@ def gravity(newton=False, kpc=True):
     """
     if newton:
         G = 6.674e-11
-    if kpc:
+    elif kpc:
         G = 0.449 
     return G
 

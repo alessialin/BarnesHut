@@ -1,10 +1,7 @@
 # file formats
-*.png
 *.csv
 *.pdf
 *.pyc
-*.txt
-*.mp4
 *.gif
 
 #virtualenv
