@@ -1,76 +1,36 @@
-#essential modules
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 
-from matplotlib.animation import FFMpegWriter #brew install ffmpeg prerequisites
-
-#essential imports
 from body import *
 from node import *
 from quadtree import *
-from simulation import *
+from utils import *
 
 
 if __name__ == '__main__':
-    #Milky Way parameters (default)
-    r0 = 3 #kpc, scale length of galaxy
-    m0 = 50.0 #10^9 solar mass, mass of galaxy 
-    m1 = 30.0
-    #simulation space
-    N = 800 #number of particles
-    L = 30.0 #half length of box, kpc
-
-    #Barnes-Hut simulation resolution
-    theta = 1.0
-    epsilon = theta*L/np.sqrt(N)
-    #time evolution parameters
-    dt = 0.1 #10Myr
-    T = 10.0 #10Myr
-    steps = int(T/dt)
-    center = [10.,10.]
-    c_vel = [-5000.,1000.]
-    #generate 1000 masses in 15kpc box
-    bodies2 = generateGalaxy(r0, m0, N//2, L)
-    bodies = generateGalaxy(r0, m1, N//2, L, center=center)
-    #print(type(bodies))
-    for i in bodies2:
-        bodies.append(i)
-
-    #make list of objects for plotting
-    images = []
-    images1 = []
-    #plotting setup
-    fig = plt.figure()
-    ax = plt.axes(xlim=(-L, L), ylim=(-L, L))
-    #evolve N-body in time
-    for i in range(steps):
-        #computation counter
-        print("Computing time step "+str(i+1)+"/"+str(steps))
-        #generate Barnes-Hut tree on original grid
-        tree = BHTree(Quad(-L,-L,2*L))
-        #populate tree with bodies from list
-        for body in bodies:
-            tree.insertBody(body)
-        #calculate force on every body from tree and evolve
-        #for body in bodies:
-            body.resetForce()
-            tree.applyForce(body, theta, epsilon)
-            #take a time step
-            body.update(dt)
-
-        #append to list of objects for plotting
-        position = np.array([body.r for body in bodies]).T 
-        marker = ['k.', 'g.']
-        scatter_body1 = ax.plot(position[0][:N//2], position[1][:N//2], marker[0]) 
-        scatter_body2 = ax.plot(position[0][N//2:], position[1][N//2:], marker[1])
-        ax.set_title('Barnes-Hut Galaxy Collision')
-        images.append(scatter_body1+scatter_body2)
-
-    anim = animation.ArtistAnimation(fig, images, interval=100, blit=True)
-    writer = FFMpegWriter(fps=60)
-    anim.save(f'./simulations/BH_GalaxyCollision_'+str(N)+'_v2.mp4', writer=writer)
-    plt.show()
-
     
+    # Galaxies parameters
+    r0 = 3 #kpc, scale length of galaxy
+    m0 = 50.0 #10^9 solar mass, mass of galaxy 1
+    m1 = 3.0
+    shift = np.array([10.,10.]) #shift of initial location of galaxy
+    c_vel = np.array([-.5,-.5]) #velocity vector of center of galaxies
+
+    # Simulation space
+    N = 800 #number of particles
+    L = 50.0 #half length of box, kpc
+
+    # Barnes-Hut simulation parameters
+    theta = 1
+    epsilon = theta*L/np.sqrt(N)
+
+    # Time evolution parameters
+    dt = 0.1 #10Myr
+    T = 20.0 #10Myr
+    steps = int(T/dt)
+    
+    # Generating two galaxies
+    tree = Node(Quad(-L,-L,2*L))
+    bodies = two_galaxies(r0=r0, m0=m0, m1=m1, N=N, L=L, c_vel=c_vel, shift=shift)
+    
+    plot_bh(steps, bodies, tree, L, theta, epsilon, dt, N, version='0')
     #nohup python3 ./src/BarnesHut.py &

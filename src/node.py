@@ -1,76 +1,70 @@
-#essential modules
-#import numpy as np
-#import matplotlib.pyplot as plt
-
-#essential imports
 from body import Body
-#from quadtree import Quad
 
-#class: node of Barnes-Hut tree
-class BHTree:
-    """definition of node of Barnes-Hut tree"""
+#2D Node in Barnes-Hut with 4 child trees
+class Node:
+
     def __init__(self, quad):
         self.quad = quad
         
     def insertBody(self, body):
-        #add body to Barnes-Hut node
+        #node is not empty
         if hasattr(self, 'body'):
-            #node is not empty
             if self.external:
-                #node is external node, make into internal node
+                #if node is external node (to the quadrant), make into internal node
                 self.external = False
                 #create 4 child trees
-                self.SW = BHTree(self.quad.SW())
-                self.SE = BHTree(self.quad.SE())
-                self.NW = BHTree(self.quad.NW())
-                self.NE = BHTree(self.quad.NE())
+                self.SW = Node(self.quad.SW())
+                self.SE = Node(self.quad.SE())
+                self.NW = Node(self.quad.NW())
+                self.NE = Node(self.quad.NE())
                 #sort node body into child trees
                 if self.body.inQuad(self.quad.SW()):
-                    #new body in SW quadrant node
                     self.SW.insertBody(self.body)
                 if self.body.inQuad(self.quad.SE()):
-                    #new body in SW quadrant node
                     self.SE.insertBody(self.body)
                 if self.body.inQuad(self.quad.NW()):
-                    #new body in SW quadrant node
                     self.NW.insertBody(self.body)
                 if self.body.inQuad(self.quad.NE()):
-                    #new body in SW quadrant node
                     self.NE.insertBody(self.body)
             #sort new body into child trees
             if body.inQuad(self.quad.SW()):
-                #new body in SW quadrant node
                 self.SW.insertBody(body)
             if body.inQuad(self.quad.SE()):
-                #new body in SW quadrant node
                 self.SE.insertBody(body)
             if body.inQuad(self.quad.NW()):
-                #new body in SW quadrant node
                 self.NW.insertBody(body)
             if body.inQuad(self.quad.NE()):
-                #new body in SW quadrant node
                 self.NE.insertBody(body)
-            #add to node body aggregate mass
-            R, M = self.body.r, self.body.m
+            #add to node body aggregate mass - center of mass (com)
+            com_R, com_M = self.body.r, self.body.m
             r, m = body.r, body.m
-            R = (M*R + m*r)/(M + m)
-            M += m
-            self.body = Body(M, R[0], R[1])
+            com_R = (com_M*com_R + m*r)/(com_M + m) #center of mass location
+            com_M += m #aggregate mass
+            self.body = Body(com_M, com_R[0], com_R[1])
+            
         else:
-            #if node is empty, add body and make external node
+            #if node is empty, add body and the node external
             self.body = body
             self.external = True
+        
 
-    def applyForce(self, body, theta, epsilon):
-        #evaluate force on body from tree with resolution theta
+    def applyForce(self, body, theta, epsilon): #epsilon = softening length
+        """
+        theta: float
+            Barnes-Hut resolution parameter 
+        epsilon : numpy.float64
+            softening length, to avoid excessive accelerations in astrophysics
+        """
+        #not an empty node
         if hasattr(self, 'body'):
-            #not an empty node
+            #if it's not a self force
             if (self.body.r != body.r).any():
-                #not self force
-                d = body.distanceTo(self.body) #distance of node body to body
+                d = body.distanceTo(self.body)
+
                 if self.quad.L/d < theta or self.external:
                     #box sufficiently far away for its size, compute force
                     body.addForce(self.body, epsilon)
+
                 else:
                     #box too close, compute forces from children instead
                     self.SW.applyForce(body, theta, epsilon)
@@ -80,7 +74,6 @@ class BHTree:
 
     def plot(self):
         if hasattr(self, 'body'):
-            #not an empty node
             self.quad.plot()
             if not self.external:
                 #plot quadrants in every child node
