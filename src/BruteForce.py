@@ -24,7 +24,7 @@ if __name__ == '__main__':
     T = 100.0 #10Myr
     steps = int(T/dt)
 
-    dir = 'output/'
+    dir = 'output/evaluation/'
     nums = list(chain(range(1,101),range(101,1001,10)))
 
     # Test Brute Force computation speed

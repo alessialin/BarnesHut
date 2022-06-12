@@ -172,5 +172,5 @@ def plot_Quadtree(bodies, tree, theta, epsilon, dir):
         tree.applyForce(body, theta, epsilon)
 
     tree.plot()
-    plt.show()
     plt.savefig(dir+'BH_Quad.png')
+    #plt.show()

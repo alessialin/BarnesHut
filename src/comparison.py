@@ -21,7 +21,7 @@ if __name__ == '__main__':
     T = 100.0 #10Myr
     steps = int(T/dt)
 
-    dir = 'output/'
+    dir = 'output/evaluation/'
 
     thetas = [0.5, 0.7, 0.8, 1.0, 1.5, 2]
     nums = list(chain(range(1,101),range(101,1001,10)))

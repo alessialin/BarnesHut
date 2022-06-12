@@ -22,7 +22,7 @@ if __name__ == '__main__':
     T = 100.0 #10Myr
     steps = int(T/dt)
 
-    dir = 'output/'
+    dir = 'output/evaluation/'
     nums = list(chain(range(1,101),range(101,1001,10)))
 
     BarnesHut_eval_plot(r0, m0, nums, L, theta, epsilon, dir)

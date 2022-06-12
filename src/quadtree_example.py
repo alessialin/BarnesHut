@@ -7,7 +7,7 @@ from utils import *
 
 if __name__ == '__main__':
 
-    dir = '/output'
+    dir = 'output/evaluation/'
 
     N = 15 #number of bodies
     L = 20
