@@ -36,11 +36,11 @@ https://user-images.githubusercontent.com/81080301/173432857-0ac0e527-560d-4181-
 
 
 ## Resources
-* Barnes, J., & Hut, P. (1986). A hierarchical O (N log N) force-calculation algorithm. nature, 324(6096), 446-449.
-* Barnes–Hut simulation - Wikipedia. (2022). Retrieved 10 June 2022, from https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation
-* [Galaxy Simulator](beltoforion.de/en/barnes-hut-galaxy-simulator/)
-* [Princeton CS126](cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html)
-* [The Barnes-Hut Approximation](https://jheer.github.io/barnes-hut/ )
+Barnes, J., & Hut, P. (1986). A hierarchical O (N log N) force-calculation algorithm. nature, 324(6096), 446-449.
+Barnes–Hut simulation - Wikipedia. (2022). Retrieved 10 June 2022, from https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation
+[Galaxy Simulator](beltoforion.de/en/barnes-hut-galaxy-simulator/)
+[Princeton CS126](cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html)
+[The Barnes-Hut Approximation](https://jheer.github.io/barnes-hut/ )
 
 
 [^1]: The purpose of this repository is solely for the final submission of the course of [20602 COMPUTER SCIENCE (ALGORITHMS)](https://didattica.unibocconi.it/ts/tsn_anteprima.php?cod_ins=20602&anno=2022&ordin=IR&IdPag=6625) at Bocconi University. 
