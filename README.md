@@ -1,26 +1,28 @@
 # Barnes-Hut Algorithm
 A Python implementation of the Barnes Hut algorithm with [simulation](https://github.com/alessialin/BarnesHut/tree/main/output) of collision of two point clouds. [^1]
 
-The Barnes-hut Algorithm is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem). It is notable for having order **O(n log n)** compared to a direct sum - Brute Force - algorithm which would be O(n^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using the center its _center of mass_.
+The Barnes-hut Algorithm is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem). <br />
+It is notable for having order **O(n log n)** compared to a direct sum - Brute Force - algorithm which would be O(n^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using the center its _center of mass_.
 
 ## Files Structure
 ```
+├── evaluation
+│   └── BH_evaluation.py
+|   └── BruteForce.py
+│   └── comparison.py
 ├── output
+│   └── benchmark
+|   │   └── BarnesHut_time.png
+|   │   └── BruteForce_time.png
+|   │   └── Comparison_time.png
 │   └── BH_GalaxyCollision_800_v[x].mp4
 │   └── BH_GalaxySimulation_800_v[x].mp4
-│   └── BarnesHut_time.png
-│   └── BruteForce_time.png
-│   └── Comparison_time.png
-│   └── BH_Quad_vel.png
 │   └── BH_Quad.png
 ├── src
 │   └── quadtree.py
-|   └── BruteForce.py
 |   └── BarnesHut.py
 |   └── body.py
 │   └── node.py
-│   └── BH_evaluation.py
-│   └── comparison.py
 │   └── quadtree_example.py
 │   └── utils.py
 ├── .gitignore
