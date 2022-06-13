@@ -5,9 +5,10 @@ from node import *
 from quadtree import *
 from utils import *
 
+
 if __name__ == '__main__':
 
-    dir = 'output/evaluation/'
+    dir = 'output/'
 
     N = 10 #number of bodies
     L = 20

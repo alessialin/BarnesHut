@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 
-from matplotlib.animation import FFMpegWriter #brew install ffmpeg prerequisites
+from matplotlib.animation import FFMpegWriter #requires: brew install ffmpeg
 from time import process_time
 from tqdm import tqdm
 
@@ -36,16 +36,18 @@ def two_galaxies(r0, m0, m1, N, L, c_vel, shift=[0.,0.]):
     galaxy = generateGalaxy(r0, m1, N//2, L, c_vel=c_vel, shift=shift)
     for i in galaxy1:
         galaxy.append(i)
+
     return galaxy
 
 def barnes_hut(galaxy, tree:Node(Quad), theta, epsilon, dt):
     for body in galaxy:
         tree.insertBody(body)
-    #calculate force on every body from tree and evolve
+        #calculate force on every body from tree and evolve
         body.resetForce()
         tree.applyForce(body, theta, epsilon)
         #take a time step
         body.update(dt)
+
     return galaxy
 
 def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_galaxies=True):
@@ -106,6 +108,7 @@ def BarnesHut_evaluation(nums, r0, m0, L, theta, epsilon):
             tree.applyForce(body, theta, epsilon)
         t_end = process_time()
         timesTree.append(t_end - t_start)
+        
     return timesTree
 
 def BruteForce_evaluation(nums, r0, m0, L, epsilon):

@@ -1,8 +1,7 @@
-#essential modules
 import numpy as np
 import matplotlib.pyplot as plt
 
-#Wuadrant in 2D space
+#Quadrant in 2D space
 class Quad:
 
     def __init__(self, rx, ry, L):

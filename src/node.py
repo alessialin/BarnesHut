@@ -76,6 +76,7 @@ class Node:
                     self.NW.applyForce(body, theta, epsilon)
                     self.NE.applyForce(body, theta, epsilon)
 
+
     def plot(self):
         if hasattr(self, 'body'):
             self.quad.plot()
