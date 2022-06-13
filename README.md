@@ -1,5 +1,5 @@
 # Barnes-Hut Algorithm
-A Python implementation of the Barnes Hut algorithm with [simulation](https://github.com/alessialin/BarnesHut/tree/main/output) of collision of two point clouds. [^1]
+A Python implementation of the Barnes Hut algorithm with a [simulation](https://github.com/alessialin/BarnesHut/tree/main/output) of collision of two point clouds. [^1]
 
 The Barnes-hut Algorithm is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem). <br />
 It is notable for having order **O(n log n)** compared to a direct sum - Brute Force - algorithm which would be O(n^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using the center its _center of mass_.
