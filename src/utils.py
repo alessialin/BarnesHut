@@ -101,9 +101,7 @@ def BarnesHut_evaluation(nums, r0, m0, L, theta, epsilon):
         tree = Node(Quad(-L,-L,2*L))
         for body in bodies:
             tree.insertBody(body)
-
         #tree traversal
-        for body in bodies:
             body.resetForce()
             tree.applyForce(body, theta, epsilon)
         t_end = process_time()
