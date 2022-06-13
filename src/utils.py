@@ -50,7 +50,7 @@ def barnes_hut(galaxy, tree:Node(Quad), theta, epsilon, dt):
 
     return galaxy
 
-def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_galaxies=True):
+def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_galaxies=True, dir='output/'):
     images = []
     marker = ['k.', 'g.']
 
@@ -72,7 +72,7 @@ def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_gala
             
         anim = animation.ArtistAnimation(fig, images, interval=100, blit=True)
         writer = FFMpegWriter(fps=30)
-        anim.save(f'./output/BH_GalaxyCollision_'+str(N)+'_v'+version+'.mp4', writer=writer)
+        anim.save(dir+'BH_GalaxyCollision_'+str(N)+'_v'+version+'.mp4', writer=writer)
         #plt.show()
 
     else: #if it's only one galaxy
@@ -88,7 +88,7 @@ def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_gala
         
         anim = animation.ArtistAnimation(fig, images, interval=100, blit=True)
         writer = FFMpegWriter(fps=30)
-        anim.save(f'./output/BH_GalaxySimulation_'+str(N)+'_v'+version+'.mp4', writer=writer)
+        anim.save(dir+'BH_GalaxySimulation_'+str(N)+'_v'+version+'.mp4', writer=writer)
         #plt.show()
 
 
@@ -135,7 +135,7 @@ def BruteForce_eval_plot(nums, r0, m0, L, epsilon, dir):
     timesForce = BruteForce_evaluation(nums, r0, m0, L, epsilon)
     plt.plot(nums, timesForce)
     plt.xlabel("N-bodies")
-    plt.ylabel("Time")
+    plt.ylabel("Time (seconds)")
     plt.title("Brute Force - Time to compute N^2 forces")
     plt.savefig(dir+'BruteForce_time.png')
 
@@ -143,7 +143,7 @@ def BarnesHut_eval_plot(r0, m0, nums, L, theta, epsilon, dir):
     timesTree = BarnesHut_evaluation(nums, r0, m0, L, theta, epsilon)
     plt.plot(nums, timesTree)
     plt.xlabel("N-bodies")
-    plt.ylabel("Time")
+    plt.ylabel("Time (seconds)")
     plt.title("Time to compute forces with Barnes-Hut quadtree for N bodies")
     plt.savefig(dir+'BarnesHut_time.png')
 
@@ -159,7 +159,7 @@ def comparison(nums, dir, thetas, r0, m0, L, epsilon):
 
     plt.plot(nums, bf, label='Brute Force')
     plt.xlabel("N-bodies")
-    plt.ylabel("Time")
+    plt.ylabel("Time (seconds")
     plt.title("Time to compute forces for N bodies - Comparisons")
     plt.legend()
     plt.savefig(dir+'Comparison_time.png')

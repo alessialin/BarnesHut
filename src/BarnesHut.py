@@ -43,8 +43,9 @@ if __name__ == '__main__':
         theta=theta,
         epsilon=epsilon,
         dt=dt,
-        n=N,
-        version='0'
+        N=N,
+        version='0', 
+        dir=dir
         )
     
     # Generating the Milky Way
@@ -57,6 +58,8 @@ if __name__ == '__main__':
         L=L,
         theta=theta,
         epsilon=epsilon,
-        dt=dt, N=N,
-        two_galaxies=False
+        dt=dt,
+        N=N,
+        two_galaxies=False,
+        dir=dir
         )

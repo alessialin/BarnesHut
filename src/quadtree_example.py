@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     dir = 'output/'
 
-    N = 10 #number of bodies
+    N = 9 #number of bodies
     L = 20
     m = 10
     epsilon = 0.1
