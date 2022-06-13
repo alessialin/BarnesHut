@@ -1,7 +1,8 @@
 # Barnes-Hut Algorithm
-A Python implementation of the Barnes Hut algorithm with a [simulation](https://github.com/alessialin/BarnesHut/tree/main/output) of collision of two point clouds. [^1]
 
-The Barnes-hut Algorithm is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem). <br />
+The Barnes-Hut Algorithm[^1] is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem).
+
+
 It is notable for having order **O(n log n)** compared to a direct sum - Brute Force - algorithm which would be O(n^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using its _center of mass_.
 
 ## Files Structure
@@ -40,8 +41,8 @@ https://user-images.githubusercontent.com/81080301/173432857-0ac0e527-560d-4181-
 ## Resources
 Barnes, J., & Hut, P. (1986). _A hierarchical O (N log N) force-calculation algorithm_. Nature, 324(6096), 446-449. <br />
 [Wikipedia](https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation) <br />
-[Galaxy Simulator](beltoforion.de/en/barnes-hut-galaxy-simulator/) <br />
-[Princeton CS126](cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html)<br />
+[Galaxy Simulator](https://www.beltoforion.de/en/barnes-hut-galaxy-simulator/) <br />
+[Princeton CS126](https://www.cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html)<br />
 [The Barnes-Hut Approximation](https://jheer.github.io/barnes-hut/)
 
 
