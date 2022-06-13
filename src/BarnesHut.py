@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     # Time evolution parameters
     dt = 0.1 #10Myr
-    T = 20.0 #10Myr
+    T = 15.0 #10Myr
     steps = int(T/dt)
 
     #BH Node

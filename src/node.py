@@ -5,6 +5,10 @@ class Node:
 
     def __init__(self, quad):
         self.quad = quad
+        self.SW = None
+        self.SE = None
+        self.NW = None
+        self.NE = None
         
     def insertBody(self, body):
         #node is not empty
