@@ -1,6 +1,7 @@
 # Barnes-Hut Algorithm
 
-The Barnes-Hut Algorithm[^1] is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem). <br />
+The Barnes-Hut Algorithm[^1] is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem).
+ <br />
 It is notable for having order **O(n log n)** compared to a direct sum - Brute Force - algorithm which would be O(n^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using its _center of mass_.
 
 ## Files Structure
