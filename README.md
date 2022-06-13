@@ -31,6 +31,7 @@ The Barnes-hut Algorithm is an approximation algorithm solving the [N-Body Probl
 
 ## Simulation
 
+https://user-images.githubusercontent.com/81080301/173432348-2488c22e-a34d-4bba-94a8-bbf4b396b12c.mp4
 
 ## Resources
 * Barnes, J., & Hut, P. (1986). A hierarchical O (N log N) force-calculation algorithm. nature, 324(6096), 446-449.
