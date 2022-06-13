@@ -35,7 +35,7 @@ It is notable for having order **O(n log n)** compared to a direct sum - Brute F
 ## Simulation
 
 
-https://user-images.githubusercontent.com/81080301/173432857-0ac0e527-560d-4181-bd28-10c911697dd6.mp4
+https://user-images.githubusercontent.com/81080301/173457020-c3ca8967-6f28-4167-ab73-b338d87f2bed.mp4
 
 
 ## Resources
