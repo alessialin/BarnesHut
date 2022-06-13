@@ -39,5 +39,3 @@ if __name__ == '__main__':
     # Generating the Milky Way
     milky_way = generateGalaxy(r0=r0, m0=m0, N=N, L=L)
     plot_bh(steps, milky_way, tree=tree2, L=L, theta=theta, epsilon=epsilon, dt=dt, N=N, two_galaxies=False)
-
-    #nohup python3 ./src/BarnesHut.py &

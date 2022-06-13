@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     dir = 'output/evaluation/'
 
-    N = 15 #number of bodies
+    N = 10 #number of bodies
     L = 20
     m = 10
     epsilon = 0.1

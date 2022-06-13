@@ -159,8 +159,8 @@ def comparison(nums, dir, thetas, r0, m0, L, epsilon):
     plt.ylabel("Time")
     plt.title("Time to compute forces for N bodies - Comparisons")
     plt.legend()
-    plt.show()
     plt.savefig(dir+'Comparison_time.png')
+    plt.show()
 
 def plot_Quadtree(bodies, tree, theta, epsilon, dir):
     for body in bodies:

@@ -14,7 +14,7 @@ class Node:
         #node is not empty
         if hasattr(self, 'body'):
             if self.external:
-                #if node is external node (to the quadrant), make into internal node
+                #if node is external node to the quadrant of self, make into internal node
                 self.external = False
                 #create 4 child trees
                 self.SW = Node(self.quad.SW())
@@ -30,7 +30,7 @@ class Node:
                     self.NW.insertBody(self.body)
                 if self.body.inQuad(self.quad.NE()):
                     self.NE.insertBody(self.body)
-            #sort new body into child trees
+            #sort new body (in the same quadrant as self) into child trees
             if body.inQuad(self.quad.SW()):
                 self.SW.insertBody(body)
             if body.inQuad(self.quad.SE()):
@@ -47,7 +47,7 @@ class Node:
             self.body = Body(com_M, com_R[0], com_R[1])
             
         else:
-            #if node is empty, add body and the node external
+            #if node is empty, add body 
             self.body = body
             self.external = True
         
@@ -66,11 +66,11 @@ class Node:
                 d = body.distanceTo(self.body)
 
                 if self.quad.L/d < theta or self.external:
-                    #box sufficiently far away for its size, compute force
+                    #cluster sufficiently far away, compute force
                     body.addForce(self.body, epsilon)
 
                 else:
-                    #box too close, compute forces from children instead
+                    #cluster too close, compute forces from children instead
                     self.SW.applyForce(body, theta, epsilon)
                     self.SE.applyForce(body, theta, epsilon)
                     self.NW.applyForce(body, theta, epsilon)
