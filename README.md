@@ -3,7 +3,7 @@
 The Barnes-Hut Algorithm[^1] is an approximation algorithm solving the [N-Body Problem](https://en.wikipedia.org/wiki/N-body_problem).
 
 
-It is notable for having order **O(n log n)** compared to a direct sum - Brute Force - algorithm which would be O(n^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using its _center of mass_.
+It is notable for having order **O(N log N)** compared to a direct sum - Brute Force - algorithm which would be O(N^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using its _center of mass_.
 
 ## Files Structure
 ```
@@ -46,4 +46,4 @@ Barnes, J., & Hut, P. (1986). _A hierarchical O (N log N) force-calculation algo
 [The Barnes-Hut Approximation](https://jheer.github.io/barnes-hut/)
 
 
-[^1]: The purpose of this repository is solely for the final submission of the course of [20602 COMPUTER SCIENCE (ALGORITHMS)](https://didattica.unibocconi.it/ts/tsn_anteprima.php?cod_ins=20602&anno=2022&ordin=IR&IdPag=6625) at Bocconi University. 
+[^1]: The purpose of this repository is for the final submission of the course of [20602 COMPUTER SCIENCE (ALGORITHMS)](https://didattica.unibocconi.it/ts/tsn_anteprima.php?cod_ins=20602&anno=2022&ordin=IR&IdPag=6625) at Bocconi University. 
