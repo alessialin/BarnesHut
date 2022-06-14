@@ -35,7 +35,7 @@ It is notable for having order **O(N log N)** compared to a direct sum - Brute F
 ## Simulation
 
 
-https://user-images.githubusercontent.com/81080301/173432857-0ac0e527-560d-4181-bd28-10c911697dd6.mp4
+https://user-images.githubusercontent.com/81080301/173457020-c3ca8967-6f28-4167-ab73-b338d87f2bed.mp4
 
 
 ## Resources
@@ -46,4 +46,4 @@ Barnes, J., & Hut, P. (1986). _A hierarchical O (N log N) force-calculation algo
 [The Barnes-Hut Approximation](https://jheer.github.io/barnes-hut/)
 
 
-[^1]: The purpose of this repository is solely for the final submission of the course of [20602 COMPUTER SCIENCE (ALGORITHMS)](https://didattica.unibocconi.it/ts/tsn_anteprima.php?cod_ins=20602&anno=2022&ordin=IR&IdPag=6625) at Bocconi University. 
+[^1]: The purpose of this repository is for the final submission of the course of [20602 COMPUTER SCIENCE (ALGORITHMS)](https://didattica.unibocconi.it/ts/tsn_anteprima.php?cod_ins=20602&anno=2022&ordin=IR&IdPag=6625) at Bocconi University. 
