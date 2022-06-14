@@ -8,8 +8,8 @@ It is notable for having order **O(N log N)** compared to a direct sum - Brute F
 ## Files Structure
 ```
 ├── evaluation
-│   └── BH_evaluation.py
-|   └── BruteForce.py
+│   └── BarnesHut_evaluation.py
+|   └── BruteForce_evaluation.py
 │   └── comparison.py
 ├── output
 │   └── benchmark
@@ -20,11 +20,11 @@ It is notable for having order **O(N log N)** compared to a direct sum - Brute F
 │   └── BH_GalaxySimulation_800_v[x].mp4
 │   └── BH_Quad.png
 ├── src
-│   └── quadtree.py
 |   └── BarnesHut.py
 |   └── body.py
 │   └── node.py
 │   └── quadtree_example.py
+│   └── quadtree.py
 │   └── utils.py
 ├── .gitignore
 ├── LICENSE
