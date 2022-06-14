@@ -6,7 +6,7 @@ The Barnes-Hut Algorithm[^1] is an approximation algorithm solving the [N-Body P
 It is notable for having order **O(N log N)** compared to a direct sum - Brute Force - algorithm which would be O(N^2). The crucial idea is that it groups nearby bodies and approximates them as a single body. If the cluster is sufficiently far away, we can approximate its gravitational effect using its _center of mass_.
 
 ## Quickstart 
-In order to run this in your local machine:
+* In order to run this in your local machine:
 ```
 > git clone https://github.com/alessialin/BarnesHut-py.git
 > cd BarnesHut
@@ -15,7 +15,7 @@ In order to run this in your local machine:
 
 NB. I'd suggest setting up a virtual environment beforehand to avoid polluting your machine's modules system.
 
-To run the Barnes-Hut simulation:
+* To run the Barnes-Hut simulation:
 ```
 > python3 ./src/BarnesHut.py
 ```
