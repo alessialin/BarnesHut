@@ -159,7 +159,7 @@ def comparison(nums, dir, thetas, r0, m0, L, epsilon):
 
     plt.plot(nums, bf, label='Brute Force')
     plt.xlabel("N-bodies")
-    plt.ylabel("Time (seconds")
+    plt.ylabel("Time (seconds)")
     plt.title("Time to compute forces for N bodies - Comparisons")
     plt.legend()
     plt.savefig(dir+'Comparison_time.png')
