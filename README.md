@@ -15,6 +15,7 @@ It is notable for having order **O(N log N)** compared to a direct sum - Brute F
 
 NB. I'd suggest setting up a virtual environment beforehand to avoid polluting your machine's modules system.
 
+<br />
 * To run the Barnes-Hut simulation:
 ```
 > python3 ./src/BarnesHut.py
