@@ -9,7 +9,7 @@ It is notable for having order **O(N log N)** compared to a direct sum - Brute F
 * In order to run this in your local machine:
 ```
 > git clone https://github.com/alessialin/BarnesHut-py.git
-> cd BarnesHut
+> cd BarnesHut-py
 > pip install -r requirements.txt
 ```
 
@@ -18,7 +18,7 @@ NB. I'd suggest setting up a virtual environment beforehand to avoid polluting y
 
 * To run the Barnes-Hut simulation:
 ```
-> python3 ./src/BarnesHut.py
+> python3 ./src/BarnesHut-py.py
 ```
 
 ## Files Structure
