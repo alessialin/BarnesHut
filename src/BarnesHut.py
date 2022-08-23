@@ -1,9 +1,8 @@
 import numpy as np
 
-from body import *
-from node import *
-from quadtree import *
-from utils import *
+from node import Node
+from quadtree import Quad
+from utils import generateGalaxy, two_galaxies, plot_bh
 
 
 if __name__ == '__main__':
@@ -33,7 +32,9 @@ if __name__ == '__main__':
     dir = 'output/'
 
     # Generating two galaxies
-    galaxies = two_galaxies(r0=r0, m0=m0, m1=m1, N=N, L=L, c_vel=c_vel, shift=shift)
+    galaxies = two_galaxies(
+        r0=r0, m0=m0, m1=m1, N=N, L=L, c_vel=c_vel, shift=shift
+    )
     
     plot_bh(
         steps=steps,
@@ -46,7 +47,7 @@ if __name__ == '__main__':
         N=N,
         version='0', 
         dir=dir
-        )
+    )
     
     # Generating the Milky Way
     milky_way = generateGalaxy(r0=r0, m0=m0, N=N, L=L)
@@ -62,4 +63,4 @@ if __name__ == '__main__':
         N=N,
         two_galaxies=False,
         dir=dir
-        )
+    )

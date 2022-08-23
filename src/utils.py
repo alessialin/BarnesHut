@@ -1,14 +1,14 @@
-import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import matplotlib.pyplot as plt
 import numpy as np
 
 from matplotlib.animation import FFMpegWriter #requires: brew install ffmpeg
 from time import process_time
 from tqdm import tqdm
 
-from body import *
-from node import *
-from quadtree import *
+from body import Body
+from node import Node
+from quadtree import Quad
 
 def generateGalaxy(r0, m0, N, L, c_vel=[0.,0.], shift=[0.,0.]):
     bodies = []
@@ -64,15 +64,26 @@ def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_gala
 
             #appending galaxies to list for plotting
             position = np.array([body.r for body in galaxies]).T 
-            scatter_body1 = ax.plot(position[0][:N//2], position[1][:N//2], marker[0]) 
-            scatter_body2 = ax.plot(position[0][N//2:], position[1][N//2:], marker[1])
+            scatter_body1 = ax.plot(
+                position[0][:N//2],
+                position[1][:N//2],
+                marker[0]
+                ) 
+            scatter_body2 = ax.plot(
+                position[0][N//2:],
+                position[1][N//2:],
+                marker[1]
+                )
             ax.set_title('Barnes-Hut Galaxies Collision')
             images.append(scatter_body1+scatter_body2)
         
             
         anim = animation.ArtistAnimation(fig, images, interval=100, blit=True)
         writer = FFMpegWriter(fps=30)
-        anim.save(dir+'BH_GalaxyCollision_'+str(N)+'_v'+version+'.mp4', writer=writer)
+        anim.save(
+            dir+'BH_GalaxyCollision_'+str(N)+'_v'+version+'.mp4',
+            writer=writer
+        )
         #plt.show()
 
     else: #if it's only one galaxy
@@ -88,7 +99,10 @@ def plot_bh(steps, galaxy, tree, L, theta, epsilon, dt, N, version='0', two_gala
         
         anim = animation.ArtistAnimation(fig, images, interval=100, blit=True)
         writer = FFMpegWriter(fps=30)
-        anim.save(dir+'BH_GalaxySimulation_'+str(N)+'_v'+version+'.mp4', writer=writer)
+        anim.save(
+            dir+'BH_GalaxySimulation_'+str(N)+'_v'+version+'.mp4',
+            writer=writer
+        )
         #plt.show()
 
 

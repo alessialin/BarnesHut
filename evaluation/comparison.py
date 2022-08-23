@@ -4,7 +4,7 @@ import sys
 sys.path.append('PATH_TO_SRC_FOLDER')
 
 from itertools import chain
-from utils import *
+from utils import comparison
 
 
 if __name__ == '__main__':
@@ -29,6 +29,3 @@ if __name__ == '__main__':
     nums = list(chain(range(1,101),range(101,1001,10)))
 
     comparison(nums, dir, thetas, r0, m0, L, epsilon)
-
-
-    

@@ -4,7 +4,7 @@ import sys
 sys.path.append('PATH_TO_SRC_FOLDER')
 
 from itertools import chain
-from utils import *
+from utils import BruteForce_eval_plot
 
 
 if __name__ == '__main__':

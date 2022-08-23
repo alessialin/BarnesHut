@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 #Quadrant in 2D space
 class Quad:
@@ -12,12 +12,15 @@ class Quad:
     def SW(self):
         #northwest quadrant
         return Quad(self.r[0], self.r[1], self.L/2.0)
+    
     def SE(self):
         #southwest quadrant
         return Quad(self.r[0]+self.L/2.0, self.r[1], self.L/2.0)
+    
     def NW(self):
         #northwest quadrant
         return Quad(self.r[0], self.r[1]+self.L/2.0, self.L/2.0)
+    
     def NE(self):
         #northeast quadrant
         return Quad(self.r[0]+self.L/2.0, self.r[1]+self.L/2.0, self.L/2.0)

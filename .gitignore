@@ -1,8 +1,10 @@
 # file formats
 *.csv
+*.gif
 *.pdf
 *.pyc
-*.gif
+*.xls
+*.xlsx
 
 #virtualenv
 venv/
