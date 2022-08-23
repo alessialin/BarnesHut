@@ -58,7 +58,7 @@ https://user-images.githubusercontent.com/81080301/173457020-c3ca8967-6f28-4167-
 Barnes, J., & Hut, P. (1986). _A hierarchical O (N log N) force-calculation algorithm_. Nature, 324(6096), 446-449. <br />
 [Wikipedia](https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation) <br />
 [Galaxy Simulator](https://www.beltoforion.de/en/barnes-hut-galaxy-simulator/) <br />
-[Princeton CS126](https://www.cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html)<br />
+[Princeton CS126](https://www.cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html) <br />
 [The Barnes-Hut Approximation](https://jheer.github.io/barnes-hut/)
 
 
