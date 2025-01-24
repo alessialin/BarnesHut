@@ -13,8 +13,6 @@ It is notable for having order **O(N log N)** compared to a direct sum - Brute F
 > pip install -r requirements.txt
 ```
 
-NB. I'd suggest setting up a virtual environment beforehand to avoid polluting your machine's modules system.
-
 
 * To run the Barnes-Hut simulation:
 ```
